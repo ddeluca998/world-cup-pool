@@ -22,7 +22,10 @@ function Matches() {
   const [activePhase, setActivePhase] = useState('All')
 
   useEffect(() => {
-    fetchMatches().then(setMatches)
+    fetchMatches().then(data => {
+      console.log('sample match:', data[0])
+      setMatches(data)
+    })
   }, [])
 
   const filtered = activePhase === 'All' ? matches : matches.filter(m => m.phase === activePhase)
@@ -79,17 +82,23 @@ function Matches() {
             <tbody>
               {filtered.map((m, i) => (
                 <tr key={i} className={m.result === '' ? 'upcoming' : 'finished'}>
-                    <td data-label="Date">{m.matchDate}</td>
-                    <td data-label="Phase"><span className={`phase-badge phase-${m.phase}`}>{m.phase}</span></td>
-                    <td data-label="Home" className={`team-name ${m.result === 'H' ? 'winner' : m.result === 'A' ? 'loser' : ''}`}>{m.home}</td>
-                    <td data-label="Away" className={`team-name ${m.result === 'A' ? 'winner' : m.result === 'H' ? 'loser' : ''}`}>{m.away}</td>
-                    <td data-label="Home Player">{m.homePlayer}</td>
-                    <td data-label="Away Player">{m.awayPlayer}</td>
-                    <td data-label="Result" className="result">
-                        {m.result === 'H' ? 'H' : m.result === 'A' ? 'A' : m.result === 'D' ? 'D' : '-'}
-                    </td>
-                    <td data-label="Home Pts" className="pts">{m.result ? m.homePoints : '-'}</td>
-                    <td data-label="Away Pts" className="pts">{m.result ? m.awayPoints : '-'}</td>
+                  <td data-label="Date">{m.matchDate}</td>
+                  <td data-label="Phase">
+                    <span className={`phase-badge phase-${m.phase}`}>{m.phase}</span>
+                  </td>
+                  <td data-label="Home" className="team-name">
+                    <span className={m.result === 'H' ? 'winner' : m.result === 'A' ? 'loser' : m.result === 'D' ? 'draw' : ''}>{m.home}</span>
+                  </td>
+                  <td data-label="Away" className="team-name">
+                    <span className={m.result === 'A' ? 'winner' : m.result === 'H' ? 'loser' : m.result === 'D' ? 'draw' : ''}>{m.away}</span>
+                  </td>
+                  <td data-label="Home Player"><span className="player-name">{m.homePlayer}</span></td>
+                  <td data-label="Away Player"><span className="player-name">{m.awayPlayer}</span></td>
+                  <td data-label="Result" className="result">
+                    {m.result === 'H' ? 'H' : m.result === 'A' ? 'A' : m.result === 'D' ? 'D' : '-'}
+                  </td>
+                  <td data-label="Home Pts" className="pts">{m.result ? m.homePoints : '-'}</td>
+                  <td data-label="Away Pts" className="pts">{m.result ? m.awayPoints : '-'}</td>
                 </tr>
               ))}
             </tbody>
