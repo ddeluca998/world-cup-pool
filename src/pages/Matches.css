@@ -166,6 +166,29 @@
   text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.matches-title {
+  animation: fadeUp 0.6s ease-out;
+}
+
+.phase-tabs {
+  animation: fadeUp 0.6s ease-out 0.1s both;
+}
+
+.matches-table-wrapper {
+  animation: fadeUp 0.6s ease-out 0.2s both;
+}
+
 @media (max-width: 600px) {
   .matches-table thead {
     display: none;
