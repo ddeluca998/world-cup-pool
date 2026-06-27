@@ -81,12 +81,12 @@ function Matches() {
                   <td data-label="Date">{m.matchDate}</td>
                   <td data-label="Phase"><span className={`phase-badge phase-${m.phase}`}>{m.phase}</span></td>
                   <td data-label="Home" className="team-name">{m.home}</td>
-                  <td data-label="Result" className="result">
-                    {m.result === 'H' ? '🏠 H' : m.result === 'A' ? 'A ✈️' : m.result === 'D' ? 'D' : '-'}
-                  </td>
                   <td data-label="Away" className="team-name">{m.away}</td>
                   <td data-label="Home Player">{m.homePlayer}</td>
                   <td data-label="Away Player">{m.awayPlayer}</td>
+                  <td data-label="Result" className="result">
+                    {m.result === 'H' ? 'H' : m.result === 'A' ? 'A' : m.result === 'D' ? 'D' : '-'}
+                  </td>
                   <td data-label="Home Pts" className="pts">{m.result ? m.homePoints : '-'}</td>
                   <td data-label="Away Pts" className="pts">{m.result ? m.awayPoints : '-'}</td>
                 </tr>
