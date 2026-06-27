@@ -4,7 +4,7 @@ import { fetchMatches } from '../api/sheets'
 import trophy from '../assets/trophy.png'
 import './Matches.css'
 
-const PHASES = ['All', 'group', 'r32', 'r16', 'qf', 'sf', 'f']
+const PHASES = ['All', 'group', 'r32', 'r16', 'qf', 'sf', 'third', 'final']
 const PHASE_LABELS = {
   All: 'All',
   group: 'Group Stage',
