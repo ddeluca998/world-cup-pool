@@ -39,7 +39,7 @@ useEffect(() => {
           /*{ title: 'Overview', path: '/overview' },*/
           { title: 'Matches', path: '/matches' },
           { title: 'Teams', path: '/teams' },
-          { title: 'Trades', path: '/trades' },
+          /*{ title: 'Trades', path: '/trades' },*/
         ].map(({ title, path }) => (
           <button key={title} className="nav-link" onClick={() => navigate(path)}>
             {title}
