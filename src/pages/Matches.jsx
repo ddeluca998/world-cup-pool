@@ -12,7 +12,8 @@ const PHASE_LABELS = {
   r16: 'Round of 16',
   qf: 'Quarter Finals',
   sf: 'Semi Finals',
-  f: 'Final'
+  third: 'Third Place',
+  final: 'Final'
 }
 
 function Matches() {
