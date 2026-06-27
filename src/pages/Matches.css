@@ -101,6 +101,38 @@
 .phase-sf { background: rgba(239,68,68,0.4); color: #fca5a5; }
 .phase-f { background: rgba(255,215,0,0.4); color: #FFD700; }
 
+.phase-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.phase-tab {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.phase-tab:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.phase-tab.active {
+  background: rgba(255,255,255,0.9);
+  color: #111;
+  font-weight: 600;
+  border-color: transparent;
+}
+
 @media (max-width: 600px) {
   .matches-table thead {
     display: none;
