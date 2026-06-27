@@ -68,10 +68,10 @@ function Matches() {
                 <th>Date</th>
                 <th>Phase</th>
                 <th>Home</th>
-                <th>Result</th>
                 <th>Away</th>
                 <th>Home Player</th>
                 <th>Away Player</th>
+                <th>Result</th>
                 <th>Home Pts</th>
                 <th>Away Pts</th>
               </tr>
