@@ -100,3 +100,41 @@
 .phase-qf { background: rgba(249,115,22,0.4); color: #fdba74; }
 .phase-sf { background: rgba(239,68,68,0.4); color: #fca5a5; }
 .phase-f { background: rgba(255,215,0,0.4); color: #FFD700; }
+
+@media (max-width: 600px) {
+  .matches-table thead {
+    display: none;
+  }
+
+  .matches-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+
+  .matches-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    white-space: normal;
+    font-size: 13px;
+  }
+
+  .matches-table td:last-child {
+    border-bottom: none;
+  }
+
+  .matches-table td::before {
+    content: attr(data-label);
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+}
