@@ -70,21 +70,37 @@
   padding: 8rem 2rem 3rem;
   text-align: center;
 }
+.badge-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 19px;
+  background: conic-gradient(
+    #e8334a 0deg 51deg,
+    #f5a623 51deg 102deg,
+    #f9e04b 102deg 153deg,
+    #5cb85c 153deg 204deg,
+    #4a90d9 204deg 255deg,
+    #7b4fa6 255deg 306deg,
+    #e8334a 306deg 360deg
+  );
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .badge {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: #111;
   border-radius: 16px;
   padding: 16px 32px;
   margin-top: 6rem;
   margin-bottom: 2rem;
   overflow: visible;
+  margin: 0;
 }
 
 .badge-text {
@@ -229,7 +245,7 @@
 }
 
 .leaderboard {
-  margin: 0 2rem 2rem;
+  margin-top: 50px;
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -322,7 +338,7 @@
   }
 }
 
-.badge {
+.badge-wrapper {
   animation: fadeUp 0.6s ease-out;
 }
 
@@ -341,20 +357,21 @@
     background-position: center top;
   }
   
-.badge {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 16px;
-  padding: 16px 32px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  overflow: visible;
+@media (max-width: 600px) {
+  .badge {
+    background: #111;
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .badge-wrapper {
+    padding: 3px;
+    border-radius: 19px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
 }
 
   .badge-trophy {
@@ -380,7 +397,8 @@
   }
 
   .leaderboard {
-    margin: 0 1rem 2rem;
+    margin-top: 30px;
+    
   }
 
   .rank-name {

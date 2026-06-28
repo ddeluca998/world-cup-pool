@@ -50,7 +50,9 @@ function Matches() {
       </nav>
 
       <div className="matches-container">
-        <h1 className="matches-title">MATCHES</h1>
+        <div className="matches-title-wrapper">
+          <h1 className="matches-title">MATCHES</h1>
+        </div>
 
         <div className="phase-tabs">
           {PHASES.map(phase => (

@@ -9,11 +9,11 @@ export async function fetchRange(range) {
 }
 
 export async function fetchRankings() {
-  const rows = await fetchRange('Rank!E2:F9')
+  const rows = await fetchRange('Rank!D2:F9')
   return rows.map((row, i) => ({
     rank: i + 1,
-    name: row[0] || '',
-    points: Number(row[1]) || 0,
+    name: row[1] || '',
+    points: Number(row[2]) || 0,
   }))
 }
 

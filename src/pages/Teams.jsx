@@ -10,9 +10,7 @@ function Teams() {
 
   useEffect(() => {
     fetchOwnership().then(data => {
-        console.log('ownership data:', data)
-        const parseDate = (dateStr) => new Date(dateStr)
-
+      const parseDate = (dateStr) => new Date(dateStr)
       const latestOwnership = {}
       data.forEach(row => {
         const team = row.name
@@ -48,7 +46,6 @@ function Teams() {
           {[
             { title: 'Matches', path: '/matches' },
             { title: 'Teams', path: '/teams' },
-            /*{ title: 'Trades', path: '/trades' },*/
           ].map(({ title, path }) => (
             <button key={title} className="nav-link" onClick={() => navigate(path)}>
               {title}
@@ -58,7 +55,9 @@ function Teams() {
       </nav>
 
       <div className="teams-container">
-        <h1 className="teams-title">TEAMS</h1>
+        <div className="teams-title-wrapper">
+          <h1 className="teams-title">TEAMS</h1>
+        </div>
         <div className="owner-grid">
           {ownerCards.map(({ owner, teams }) => (
             <div className="owner-card" key={owner}>

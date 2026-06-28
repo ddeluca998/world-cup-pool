@@ -20,13 +20,37 @@
   padding: 6rem 2rem 2rem;
 }
 
+.matches-title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 3px;
+  border-radius: 15px;
+  background: conic-gradient(
+    #e8334a 0deg 51deg,
+    #f5a623 51deg 102deg,
+    #f9e04b 102deg 153deg,
+    #5cb85c 153deg 204deg,
+    #4a90d9 204deg 255deg,
+    #7b4fa6 255deg 306deg,
+    #e8334a 306deg 360deg
+  );
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .matches-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 48px;
   color: #fff;
   letter-spacing: 3px;
-  margin-bottom: 1.5rem;
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  display: inline-block;
+  background: #111;
+  padding: 8px 24px;
+  border-radius: 12px;
+  margin: 0;
 }
 
 .matches-table-wrapper {
@@ -177,7 +201,7 @@
   }
 }
 
-.matches-title {
+.matches-title-wrapper {
   animation: fadeUp 0.6s ease-out;
 }
 
