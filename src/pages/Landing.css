@@ -70,10 +70,11 @@
   padding: 8rem 2rem 3rem;
   text-align: center;
 }
+
 .badge-wrapper {
   display: flex;
   justify-content: center;
-  padding: 3px;
+  padding: 4px;
   border-radius: 19px;
   background: conic-gradient(
     #e8334a 0deg 51deg,
@@ -318,7 +319,7 @@
 .rank-trophy {
   height: 55px;
   width: auto;
-  margin-left: 18px;
+  margin-left: 60px;
   vertical-align: middle;
   filter: drop-shadow(0 0 4px rgba(255,215,0,0.8));
 }
