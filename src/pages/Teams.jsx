@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { fetchOwnership } from '../api/sheets'
+import { fetchOwnership, fetchEliminated } from '../api/sheets'
 import trophy from '../assets/trophy.png'
 import './Teams.css'
 
 function Teams() {
   const navigate = useNavigate()
   const [ownerCards, setOwnerCards] = useState([])
+  const [eliminated, setEliminated] = useState([])
 
   useEffect(() => {
     fetchOwnership().then(data => {
@@ -34,6 +35,8 @@ function Teams() {
 
       setOwnerCards(cards)
     })
+
+    fetchEliminated().then(setEliminated)
   }, [])
 
   return (
@@ -65,7 +68,9 @@ function Teams() {
               <div className="team-count">{teams.length} teams</div>
               <ul className="team-list">
                 {teams.map(team => (
-                  <li key={team} className="team-item">{team}</li>
+                  <li key={team} className={`team-item ${eliminated.includes(team) ? 'eliminated' : ''}`}>
+                    {team}
+                  </li>
                 ))}
               </ul>
             </div>

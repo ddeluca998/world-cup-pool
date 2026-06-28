@@ -45,3 +45,8 @@ export async function fetchOwnership() {
     effectiveDate: row[2] || '',
   }))
 }
+
+export async function fetchEliminated() {
+  const rows = await fetchRange('Rank!A13:A100')
+  return rows.map(row => row[0] || '').filter(name => name !== '')
+}
